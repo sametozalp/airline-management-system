@@ -4,4 +4,4 @@ from ..models import Reservation
 class ReservationCreateSerializer(ModelSerializer):
     class Meta:
         model = Reservation
-        exclude = ["id"]
+        exclude = ["id", "created_at"]

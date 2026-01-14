@@ -10,7 +10,6 @@ class Reservation(models.Model):
     flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
     status = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.reservation_code + " - " + self.passenger_name
