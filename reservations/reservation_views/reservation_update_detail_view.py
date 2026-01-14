@@ -14,10 +14,10 @@ class ReservationUpdateDetailView(APIView):
         reservartion = get_object_or_404(Reservation, id=id)
         serializer = ReservationDetailSerializer(reservartion)
         return Response(serializer.data)
-    
+
     def patch(self, req, id):
         reservartion = get_object_or_404(Reservation, id=id)
-        serializer = ReservationUpdateSerializer(reservartion, data = req.data)
+        serializer = ReservationUpdateSerializer(reservartion, data=req.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
