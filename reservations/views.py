@@ -4,17 +4,37 @@ from .models import Reservation
 from rest_framework.response import Response
 from .serializers.reservation_basic_serializer import ReservationBasicSerializer
 from .serializers.reservation_detail_serializer import ReservationDetailSerializer
+from .serializers.reservation_create_serializer import ReservationCreateSerializer
+from rest_framework import status
+from rest_framework.views import APIView
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
 
-@api_view(['GET'])
-def get_all(req):
-    reservations = Reservation.objects.all()
-    serializer = ReservationBasicSerializer(reservations, many=True)
-    return Response(serializer.data)
+class ReservationListCreateView(APIView):
+    
+    def get(self, req):
+        reservartions = Reservation.objects.all()
+        serializer = ReservationBasicSerializer(reservartions, many=True)
+        return Response(serializer.data)
+    
+    def post(self, req):
+        serializer = ReservationCreateSerializer(data=req.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response (serializer.data, status=status.HTTP_201_CREATED)
+        
+class ReservationUpdateDetailView(APIView):
 
-@api_view(['GET'])
-def get_detail(req, id):
-    airplane = Reservation.objects.get(id=id)
-    serializer = ReservationDetailSerializer(airplane)
-    return Response(serializer.data)
+    def get(self, req, id):
+        reservartion = get_object_or_404(Reservation, id=id)
+        serializer = ReservationDetailSerializer(reservartion)
+        return Response(serializer.data)
+    
+    def patch(self, req, id):
+        reservartion = get_object_or_404(Reservation, id=id)
+        serializer = ReservationUpdateSerializer(reservartion, data = req.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

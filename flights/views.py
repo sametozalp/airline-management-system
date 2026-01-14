@@ -31,7 +31,7 @@ class FlightUpdateDetailView(APIView):
         serializer = FlightDetailSerializer(flight)
         return Response(serializer.data)
     
-    def put(self, req, id):
+    def patch(self, req, id):
         flight = get_object_or_404(Flight, id=id)
         serializer = FlightUpdateSerializer(flight, data = req.data)
         if serializer.is_valid():
