@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from .models import Airplane
 from rest_framework.response import Response
-from .serializers import AirplaneBasicSerializer, AirplaneDetailSerializer
+from .serializers.airplane_basic_serializer import AirplaneBasicSerializer
+from .serializers.airplane_detail_serializer import AirplaneDetailSerializer
 from rest_framework.decorators import api_view
 
 # Create your views here.
