@@ -40,3 +40,7 @@ class AirplaneUpdateDetailView(APIView):
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
+    def delete(self, req, id):
+        airplane = get_object_or_404(Airplane, id=id)
+        airplane.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
