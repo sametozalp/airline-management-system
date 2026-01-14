@@ -3,7 +3,9 @@ from .models import Airplane
 from rest_framework.response import Response
 from .serializers.airplane_basic_serializer import AirplaneBasicSerializer
 from .serializers.airplane_detail_serializer import AirplaneDetailSerializer
+from .serializers.airplane_create_serializer import AirplaneCreateSerializer
 from rest_framework.decorators import api_view
+from rest_framework import status
 
 # Create your views here.
 
@@ -18,3 +20,9 @@ def get_detail(req, id):
     airplane = Airplane.objects.get(id=id)
     serializer = AirplaneDetailSerializer(airplane)
     return Response(serializer.data)
+
+@api_view(['POST'])
+def create(req):
+    serializer = AirplaneCreateSerializer(data=req.data)
+    serializer.save()
+    return Response (serializer.data, status=status.HTTP_201_CREATED)
