@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import FlightListCreateView, FlightUpdateDetailView
+from .flight_views.flight_list_create_view import FlightListCreateView
+from .flight_views.flight_update_detail_view import FlightUpdateDetailView
 
 urlpatterns = [
     path('', FlightListCreateView.as_view(), name='flight-list-create'),
