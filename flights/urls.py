@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import get_all, get_detail
+from .views import FlightListCreateView, FlightUpdateDetailView
 
 urlpatterns = [
-    path('', get_all, name='get_all'),
-    path('<int:id>', get_detail, name='get_detail')
+    path('', FlightListCreateView.as_view(), name='flight-list-create'),
+    path('<int:id>', FlightUpdateDetailView.as_view(), name='flight-detail-update')
 ]

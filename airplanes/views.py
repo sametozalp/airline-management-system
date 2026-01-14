@@ -5,7 +5,6 @@ from .serializers.airplane_basic_serializer import AirplaneBasicSerializer
 from .serializers.airplane_detail_serializer import AirplaneDetailSerializer
 from .serializers.airplane_create_serializer import AirplaneCreateSerializer
 from .serializers.airplane_update_serializer import AirplaneUpdateSerializer
-from rest_framework.decorators import api_view
 from rest_framework import status
 from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
