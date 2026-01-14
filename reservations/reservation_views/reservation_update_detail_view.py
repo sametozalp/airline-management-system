@@ -2,9 +2,7 @@ from django.shortcuts import render
 from rest_framework.decorators import api_view
 from ..models import Reservation
 from rest_framework.response import Response
-from ..serializers.reservation_basic_serializer import ReservationBasicSerializer
 from ..serializers.reservation_detail_serializer import ReservationDetailSerializer
-from ..serializers.reservation_create_serializer import ReservationCreateSerializer
 from ..serializers.reservation_update_serializer import ReservationUpdateSerializer
 from rest_framework import status
 from rest_framework.views import APIView
