@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import get_all, get_detail, create
+from .views import AirplaneListCreateView, AirplaneUpdateDetailView
 
 urlpatterns = [
-    path('', get_all, name='get_all'),
-    path('<int:id>', get_detail, name='get_detail'),
+    path("", AirplaneListCreateView.as_view(), name="airplane-list-create"),
+    path("<int:id>", AirplaneUpdateDetailView.as_view(), name="airplane-update-detail")
 ]
