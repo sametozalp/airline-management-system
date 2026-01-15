@@ -17,3 +17,19 @@ class Reservation(models.Model):
 
     def __str__(self):
         return self.reservation_code + " - " + self.passenger_name
+    
+    def get_reservation_status_message(self):
+        current_status = "Confirmed"
+        
+        return (
+            f"Dear {self.passenger_name},\n\n"
+            f"Your reservation has been successfully processed.\n"
+            f"------------------------------------------\n"
+            f"RESERVATION DETAILS:\n"
+            f"Reservation Code: {self.reservation_code}\n"
+            f"Flight: {self.flight}\n"
+            f"Status: {current_status}\n"
+            f"Date: {self.created_at}\n"
+            f"------------------------------------------\n\n"
+            f"Thank you for choosing us."
+        )
