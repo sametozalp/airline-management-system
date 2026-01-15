@@ -7,6 +7,7 @@ from ..serializers.reservation_update_serializer import ReservationUpdateSeriali
 from rest_framework import status
 from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
+from drf_yasg.utils import swagger_auto_schema
 
 class ReservationUpdateDetailView(APIView):
 
@@ -15,6 +16,9 @@ class ReservationUpdateDetailView(APIView):
         serializer = ReservationDetailSerializer(reservartion)
         return Response(serializer.data)
 
+    @swagger_auto_schema(
+    request_body=ReservationUpdateSerializer
+    )
     def patch(self, req, id):
         reservartion = get_object_or_404(Reservation, id=id)
         serializer = ReservationUpdateSerializer(reservartion, data=req.data)

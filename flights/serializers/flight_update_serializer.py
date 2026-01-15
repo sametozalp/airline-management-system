@@ -4,4 +4,4 @@ from ..models import Flight
 class FlightUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Flight
-        fields = ["id", "airplane", "arrival_time"]
+        fields = ["airplane", "arrival_time", "departure_time"]

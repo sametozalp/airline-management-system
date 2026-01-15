@@ -6,6 +6,7 @@ from ..serializers.airplane_update_serializer import AirplaneUpdateSerializer
 from rest_framework import status
 from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
+from drf_yasg.utils import swagger_auto_schema
 
 class AirplaneUpdateDetailView(APIView):
 
@@ -14,6 +15,9 @@ class AirplaneUpdateDetailView(APIView):
         serializer = AirplaneDetailSerializer(airplane)
         return Response(serializer.data)
     
+    @swagger_auto_schema(
+        request_body=AirplaneUpdateSerializer
+    )
     def patch(self, req, id):
         airplane = get_object_or_404(Airplane, id=id)
         serializer = AirplaneUpdateSerializer(airplane, data = req.data)

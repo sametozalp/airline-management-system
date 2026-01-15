@@ -2,18 +2,22 @@ from django.shortcuts import render
 from ..models import Flight
 from rest_framework.response import Response
 from ..serializers.flight_detail_serializer import FlightDetailSerializer
-from ..serializers.flight_update_serialize import FlightUpdateSerializer
+from ..serializers.flight_update_serializer import FlightUpdateSerializer
 from rest_framework import status
 from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
-        
+from drf_yasg.utils import swagger_auto_schema
+
 class FlightUpdateDetailView(APIView):
 
     def get(self, req, id):
         flight = get_object_or_404(Flight, id=id)
         serializer = FlightDetailSerializer(flight)
         return Response(serializer.data)
-    
+
+    @swagger_auto_schema(
+        request_body=FlightUpdateSerializer
+    )
     def patch(self, req, id):
         flight = get_object_or_404(Flight, id=id)
         serializer = FlightUpdateSerializer(flight, data = req.data)

@@ -7,6 +7,7 @@ from ..serializers.reservation_create_serializer import ReservationCreateSeriali
 from rest_framework import status
 from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
+from drf_yasg.utils import swagger_auto_schema
 
 class ReservationListCreateView(APIView):
     
@@ -15,6 +16,9 @@ class ReservationListCreateView(APIView):
         serializer = ReservationBasicSerializer(reservartions, many=True)
         return Response(serializer.data)
     
+    @swagger_auto_schema(
+        request_body=ReservationCreateSerializer
+    )
     def post(self, req):
         serializer = ReservationCreateSerializer(data=req.data)
         if serializer.is_valid():
