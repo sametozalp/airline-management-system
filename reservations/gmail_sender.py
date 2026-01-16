@@ -40,6 +40,6 @@ class GmailSender:
                 body={'raw': encoded_message}
             ).execute()
             
-            print(f"Mail gönderildi! ID: {send_message['id']}")
+            print(f"Sent mail! ID: {send_message['id']}")
         except Exception as e:
-            print(f"Hata: {e}")
+            print(f"Error: {e}")

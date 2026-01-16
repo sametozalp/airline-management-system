@@ -5,4 +5,4 @@ from .flight_create_update_base_serializer import FlightCreateUpdateBaseSerializ
 class FlightCreateSerializer(FlightCreateUpdateBaseSerializer):
     class Meta:
         model = Flight
-        exclude = ["id"]
+        fields = "__all__"

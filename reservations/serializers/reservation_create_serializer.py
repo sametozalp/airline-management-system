@@ -4,7 +4,7 @@ from ..models import Reservation
 class ReservationCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Reservation
-        exclude = ["id", "created_at", "reservation_code"]
+        exclude = ["created_at", "reservation_code", "status"]
 
     def validate(self, data):
         flight = data.get('flight')

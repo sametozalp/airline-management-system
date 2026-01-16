@@ -4,4 +4,4 @@ from ..models import Airplane
 class AirplaneCreateSerializer(ModelSerializer):
     class Meta:
         model = Airplane
-        exclude = ["id"]
+        exclude = ["status"]
