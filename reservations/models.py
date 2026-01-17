@@ -13,7 +13,7 @@ class Reservation(models.Model):
     reservation_code = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
 
     def __str__(self):
-        return self.reservation_code + " - " + self.passenger_name
+        return str(self.reservation_code) + " - " + self.passenger_name
     
     def get_reservation_status_message(self):
         current_status = "Confirmed"
