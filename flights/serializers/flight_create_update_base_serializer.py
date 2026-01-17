@@ -4,6 +4,11 @@ from ..models import Flight
 from django.utils import timezone
 
 class FlightCreateUpdateBaseSerializer(serializers.ModelSerializer):
+    flight_number = serializers.CharField(allow_null=False, allow_blank=False, required=True)
+    departure = serializers.CharField(allow_null=False, allow_blank=False, required=True)
+    destination = serializers.CharField(allow_null=False, allow_blank=False, required=True)
+    arrival_time = serializers.DateTimeField(allow_null=False, allow_blank=False, required=True)
+    departure_time = serializers.DateTimeField(allow_null=False, allow_blank=False, required=True)
     
     def validate(self, data):
         airplane = data.get('airplane')
