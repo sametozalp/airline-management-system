@@ -11,7 +11,7 @@ class ReservationCreateUpdateSerializer(serializers.ModelSerializer):
 
         current_reservations = Reservation.objects.filter(flight=flight)
 
-        # if is it update, remove me
+        # if is it update, exclude me
         if self.instance:
             current_reservations = current_reservations.exclude(pk=self.instance.pk)
 
