@@ -6,7 +6,7 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 
-class GmailSender:
+class MailService:
     def __init__(self, credentials_path='config/gmail_credentials.json'):
         self.scopes = ['https://www.googleapis.com/auth/gmail.send']
         self.creds = None

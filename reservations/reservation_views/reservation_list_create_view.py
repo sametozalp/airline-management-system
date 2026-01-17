@@ -8,7 +8,7 @@ from rest_framework import status
 from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
 from drf_yasg.utils import swagger_auto_schema
-from ..gmail_sender import GmailSender
+from ..mail_service import MailService
 
 class ReservationListCreateView(APIView):
     
@@ -24,8 +24,8 @@ class ReservationListCreateView(APIView):
         serializer = ReservationCreateSerializer(data=req.data)
         if serializer.is_valid():
             saved = serializer.save()
-            gmail = GmailSender()
-            gmail.send_mail(
+            mail = MailService()
+            mail.send_mail(
                 subject="Created Reservation",
                 content= saved.get_reservation_status_message(),
                 to_email=req.data.get("passenger_email")
