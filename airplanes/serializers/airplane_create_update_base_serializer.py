@@ -7,11 +7,8 @@ class AirplaneCreateUpdateBaseSerializer(serializers.ModelSerializer):
     production_year = serializers.IntegerField(allow_null=False, required=True)
 
     def validate_tail_number(self, value):
-        print("tail number: " + str(value))
         if not 3 < len(value) < 7:
-            print("girdi")
             raise serializers.ValidationError("Tail number can not be less than 3 characters and greater than 7 characters")
-        print("girmedi")
         return value
     
     def validate_production_year(self, value):

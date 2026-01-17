@@ -26,6 +26,10 @@ class FlightCreateUpdateBaseSerializer(serializers.ModelSerializer):
             arrival_time__gt=departure_time - time_break # greater than
         )
 
+        # if is it update, exclude me
+        if self.instance:
+            conflict_flights = conflict_flights.exclude(pk=self.instance.pk)
+
         if conflict_flights.exists():
             raise serializers.ValidationError("The airplane is not available for this flight.")
         
