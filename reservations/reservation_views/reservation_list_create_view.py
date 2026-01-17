@@ -8,7 +8,8 @@ from rest_framework import status
 from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
 from drf_yasg.utils import swagger_auto_schema
-from ..mail_service import MailService
+# from ..mail_service import MailService
+from utils.mail_method import send_email
 
 class ReservationListCreateView(APIView):
     
@@ -24,11 +25,12 @@ class ReservationListCreateView(APIView):
         serializer = ReservationCreateSerializer(data=req.data)
         if serializer.is_valid():
             saved = serializer.save()
-            mail = MailService()
-            mail.send_mail(
-                subject="Created Reservation",
-                content= saved.get_reservation_status_message(),
-                to_email=req.data.get("passenger_email")
-            )
+            # mail = MailService()
+            # mail.send_mail(
+            #     subject="Created Reservation",
+            #     content= saved.get_reservation_status_message(),
+            #     to_email=req.data.get("passenger_email")
+            # )
+            send_email(subject=f"Created Reservation - {saved.reservation_code}", message=saved.get_reservation_status_message(), to=req.data.get("passenger_email"))
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
