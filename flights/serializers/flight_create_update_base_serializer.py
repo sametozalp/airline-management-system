@@ -15,8 +15,7 @@ class FlightCreateUpdateBaseSerializer(serializers.ModelSerializer):
         departure_time = data.get('departure_time')
         arrival_time = data.get('arrival_time')
 
-        if airplane == None or departure_time == None or arrival_time == None:
-            serializers.ValidationError("Null value detected.")
+        # conflic control
 
         time_break = timedelta(hours=1)
         
@@ -29,6 +28,11 @@ class FlightCreateUpdateBaseSerializer(serializers.ModelSerializer):
 
         if conflict_flights.exists():
             raise serializers.ValidationError("The airplane is not available for this flight.")
+        
+        # is it arrival time after departure time control
+
+        if arrival_time < departure_time + timedelta(minutes=20):
+            raise serializers.ValidationError("Arrival time must be at least 20 minutes after departure time.")
         
         return data
 
