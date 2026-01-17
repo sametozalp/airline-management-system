@@ -7,8 +7,11 @@ class AirplaneCreateUpdateBaseSerializer(serializers.ModelSerializer):
     production_year = serializers.IntegerField(allow_null=False, required=True)
 
     def validate_tail_number(self, value):
-        if 3 < len(value) < 7:
-            raise serializers.ValidationError("Tail number can not be less than 3 characters and more than 7 characters")
+        print("tail number: " + str(value))
+        if not 3 < len(value) < 7:
+            print("girdi")
+            raise serializers.ValidationError("Tail number can not be less than 3 characters and greater than 7 characters")
+        print("girmedi")
         return value
     
     def validate_production_year(self, value):
@@ -17,11 +20,11 @@ class AirplaneCreateUpdateBaseSerializer(serializers.ModelSerializer):
         return value
     
     def validate_capacity(self, value):
-        if value > 0:
+        if value <= 0:
             raise serializers.ValidationError("Capacity must be greater than 0")
         return value
     
     def validate_model(self, value):
-        if value is None or value == "":
-            raise serializers.ValidationError("Model can not be blank")
+        if len(value) < 3:
+            raise serializers.ValidationError("Model can not be less than 3 characters")
         return value
