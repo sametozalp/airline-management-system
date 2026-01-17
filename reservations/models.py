@@ -6,7 +6,7 @@ import uuid
 
 class Reservation(models.Model):
     passenger_name = models.CharField(max_length=200)
-    passenger_email = models.CharField(max_length=200)
+    passenger_email = models.EmailField(max_length=200)
     flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
     status = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
