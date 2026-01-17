@@ -10,7 +10,7 @@ class Reservation(models.Model):
     flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
     status = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    reservation_code = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    reservation_code = models.CharField(default=str(uuid.uuid4()).split('-')[0].upper(), editable=False, unique=True)
 
     def __str__(self):
         return str(self.reservation_code) + " - " + self.passenger_name
