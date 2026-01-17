@@ -1,6 +1,11 @@
 from rest_framework import serializers
 
 class AirplaneCreateUpdateBaseSerializer(serializers.ModelSerializer):
+    tail_number = serializers.CharField(allow_null=False, allow_blank=False, required=True)
+    model = serializers.CharField(allow_null=False, allow_blank=False, required=True)
+    capacity = serializers.IntegerField(allow_null=False, required=True)
+    production_year = serializers.IntegerField(allow_null=False, required=True)
+
     def validate_tail_number(self, value):
         if 3 < len(value) < 7:
             raise serializers.ValidationError("Tail number can not be less than 3 characters and more than 7 characters")
