@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from datetime import timedelta
 from ..models import Flight
+from django.utils import timezone
 
 class FlightCreateUpdateBaseSerializer(serializers.ModelSerializer):
     
@@ -25,3 +26,18 @@ class FlightCreateUpdateBaseSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("The airplane is not available for this flight.")
         
         return data
+
+    def validate_flight_number(self, value):
+        if len(value) < 3:
+            raise serializers.ValidationError("Flight number must greater than 3 character")
+        return value
+    
+    def validate_departure_time(self, value):
+        if value < timezone.now():
+            raise serializers.ValidationError("The departure time cannot be in the past")
+        return value
+    
+    def validate_arrival_time(self, value):
+        if value < timezone.now():
+            raise serializers.ValidationError("The arrival time cannot be in the past")
+        return value
