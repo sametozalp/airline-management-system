@@ -1,0 +1,1283 @@
+{
+  "info": {
+    "_postman_id": "4e1b1911-6956-41b8-8266-c77bb05006b9",
+    "name": "Airline Management System API",
+    "description": "Technarts Test\n\nContact Support:  \nEmail: [contact@snippets.local](https://mailto:contact@snippets.local)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "38097943"
+  },
+  "item": [
+    {
+      "name": "airplanes",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "flights",
+              "item": [
+                {
+                  "name": "airplanes flights list",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/airplanes/:id/flights",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "airplanes",
+                        ":id",
+                        "flights"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "15"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "Untitled Response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/airplanes/:id/flights",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "airplanes",
+                            ":id",
+                            "flights"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "string"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "airplanes read",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/airplanes/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "airplanes",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "15"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Untitled Response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/airplanes/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "airplanes",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "string"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": ""
+                }
+              ]
+            },
+            {
+              "name": "airplanes partial update",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"id\": 15,\n    \"tail_number\": \"TC-NRT\",\n    \"model\": \"Airbus A320\",\n    \"capacity\": 190,\n    \"production_year\": 2006,\n    \"status\": false\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/airplanes/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "airplanes",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "15"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Untitled Response",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"tail_number\": \"string\",\n  \"model\": \"string\",\n  \"capacity\": 9847,\n  \"production_year\": 9472,\n  \"status\": true\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/airplanes/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "airplanes",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "string"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"tail_number\": \"string\",\n  \"model\": \"string\",\n  \"capacity\": 9847,\n  \"production_year\": 9472,\n  \"status\": true\n}"
+                }
+              ]
+            },
+            {
+              "name": "airplanes delete",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/airplanes/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "airplanes",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "14"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Untitled Response",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/airplanes/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "airplanes",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "string"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "airplanes list",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/airplanes/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "airplanes",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Untitled Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: basic",
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/airplanes/",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "airplanes",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "airplanes create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tail_number\": \"TC-NRT\",\n  \"model\": \"Airbus A320\",\n  \"capacity\": 200,\n  \"production_year\": 2006\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/airplanes/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "airplanes",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Untitled Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: basic",
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"tail_number\": \"string\",\n  \"model\": \"string\",\n  \"capacity\": 1474,\n  \"production_year\": 4972\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/airplanes/",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "airplanes",
+                    ""
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"tail_number\": \"string\",\n  \"model\": \"string\",\n  \"capacity\": 8790,\n  \"production_year\": 18,\n  \"id\": 8712\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "flights",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "reservations",
+              "item": [
+                {
+                  "name": "flights reservations list",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/flights/:id/reservations",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "flights",
+                        ":id",
+                        "reservations"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "16"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "Untitled Response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/flights/:id/reservations",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "flights",
+                            ":id",
+                            "reservations"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "string"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "flights read",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/flights/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "flights",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "16"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Untitled Response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/flights/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "flights",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "string"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": ""
+                }
+              ]
+            },
+            {
+              "name": "flights partial update",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"flight_number\": \"147852\",\n  \"departure\": \"Ankara\",\n  \"destination\": \"İstanbul\",\n  \"arrival_time\": \"2026-02-18T10:20:59.610000Z\",\n  \"departure_time\": \"2026-02-18T10:00:58.740000Z\",\n  \"airplane\": 15\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/flights/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "flights",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "16"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Untitled Response",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"flight_number\": \"str\",\n  \"departure\": \"string\",\n  \"destination\": \"string\",\n  \"arrival_time\": \"1975-02-16T09:47:41.610Z\",\n  \"departure_time\": \"1955-08-21T10:38:58.740Z\",\n  \"airplane\": 998\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/flights/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "flights",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "string"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"flight_number\": \"string\",\n  \"departure\": \"string\",\n  \"destination\": \"string\",\n  \"arrival_time\": \"1979-06-01T15:50:36.273Z\",\n  \"departure_time\": \"1960-08-06T06:09:26.371Z\",\n  \"airplane\": 6724,\n  \"id\": 8353\n}"
+                }
+              ]
+            },
+            {
+              "name": "flights delete",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/flights/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "flights",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "16"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Untitled Response",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/flights/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "flights",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "string"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "flights list",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/flights/?destination=İzmir&departure=Ankara&airplane=15&departure_time=2026-02-18T10:00:58.740000Z&arrival_time=2026-02-18T10:20:59.610000Z",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "flights",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "destination",
+                  "value": "İzmir"
+                },
+                {
+                  "key": "departure",
+                  "value": "Ankara"
+                },
+                {
+                  "key": "airplane",
+                  "value": "15"
+                },
+                {
+                  "key": "departure_time",
+                  "value": "2026-02-18T10:00:58.740000Z"
+                },
+                {
+                  "key": "arrival_time",
+                  "value": "2026-02-18T10:20:59.610000Z"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Untitled Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: basic",
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/flights/?destination=string&departure=string&airplane=string&departure_time=string&arrival_time=string",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "flights",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "key": "destination",
+                      "value": "string"
+                    },
+                    {
+                      "key": "departure",
+                      "value": "string"
+                    },
+                    {
+                      "key": "airplane",
+                      "value": "string"
+                    },
+                    {
+                      "key": "departure_time",
+                      "value": "string"
+                    },
+                    {
+                      "key": "arrival_time",
+                      "value": "string"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"flight_number\": \"string\",\n    \"departure\": \"string\",\n    \"destination\": \"string\",\n    \"airplane\": {\n      \"tail_number\": \"string\",\n      \"model\": \"string\",\n      \"id\": 9917,\n      \"capacity\": 7452058149451749000\n    },\n    \"id\": 8826\n  },\n  {\n    \"flight_number\": \"string\",\n    \"departure\": \"string\",\n    \"destination\": \"string\",\n    \"airplane\": {\n      \"tail_number\": \"string\",\n      \"model\": \"string\",\n      \"id\": 2233,\n      \"capacity\": 2283426533484576800\n    },\n    \"id\": 1896\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "flights create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"flight_number\": \"789654\",\n  \"departure\": \"Ankara\",\n  \"destination\": \"İzmir\",\n  \"arrival_time\": \"2026-02-18T10:20:59.610Z\",\n  \"departure_time\": \"2026-02-18T10:00:58.740Z\",\n  \"airplane\": 15\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/flights/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "flights",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Untitled Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: basic",
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"flight_number\": \"str\",\n  \"departure\": \"string\",\n  \"destination\": \"string\",\n  \"arrival_time\": \"1975-02-16T09:47:41.610Z\",\n  \"departure_time\": \"1955-08-21T10:38:58.740Z\",\n  \"airplane\": 998\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/flights/",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "flights",
+                    ""
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"flight_number\": \"string\",\n  \"departure\": \"string\",\n  \"destination\": \"string\",\n  \"arrival_time\": \"1979-06-01T15:50:36.273Z\",\n  \"departure_time\": \"1960-08-06T06:09:26.371Z\",\n  \"airplane\": 6724,\n  \"id\": 8353\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "reservations",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "reservations read",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/reservations/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "reservations",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "31"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Untitled Response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/reservations/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "reservations",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "string"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": ""
+                }
+              ]
+            },
+            {
+              "name": "reservations partial update",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"passenger_name\": \"string\",\n  \"passenger_email\": \"X5kjG2e2uFE4@bRNgNsMmQFpZueJCPtZmZEoCU.nbud\",\n  \"flight\": 5098,\n  \"status\": true\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/reservations/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "reservations",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "string"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Untitled Response",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"passenger_name\": \"string\",\n  \"passenger_email\": \"X5kjG2e2uFE4@bRNgNsMmQFpZueJCPtZmZEoCU.nbud\",\n  \"flight\": 5098,\n  \"status\": true\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/reservations/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "reservations",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "string"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"passenger_name\": \"string\",\n  \"passenger_email\": \"X5kjG2e2uFE4@bRNgNsMmQFpZueJCPtZmZEoCU.nbud\",\n  \"flight\": 5098,\n  \"status\": true\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "reservations list",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/reservations/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "reservations",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Untitled Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: basic",
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/reservations/",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "reservations",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "reservations create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"passenger_name\": \"Samet\",\n  \"passenger_email\": \"sametozalp0056@gmail.com\",\n  \"flight\": 16\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/reservations/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "reservations",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Untitled Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: basic",
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"passenger_name\": \"string\",\n  \"passenger_email\": \"xqzV6mmPSorXZCR@Gk.nycq\",\n  \"flight\": 1566\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/reservations/",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "reservations",
+                    ""
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"passenger_name\": \"string\",\n  \"passenger_email\": \"PwegD9ojoCruXo@Oh.kp\",\n  \"flight\": 6716,\n  \"id\": 5201\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8000"
+    }
+  ]
+}
