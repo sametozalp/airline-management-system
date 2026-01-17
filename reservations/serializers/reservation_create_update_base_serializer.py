@@ -9,9 +9,13 @@ class ReservationCreateUpdateSerializer(serializers.ModelSerializer):
         flight = data.get('flight')
         capacity = flight.airplane.capacity
 
-        current_reservations = Reservation.objects.filter(flight=flight).count()
+        current_reservations = Reservation.objects.filter(flight=flight)
 
-        if(current_reservations >= capacity):
+        # if is it update, remove me
+        if self.instance:
+            current_reservations = current_reservations.exclude(pk=self.instance.pk)
+
+        if(current_reservations.count() >= capacity):
             raise serializers.ValidationError("No capacity!")
         
         return data
