@@ -61,24 +61,17 @@ DEFAULT_FROM_EMAIL = 'YOUR_NAME <YOUR_EMAIL>'
 EMAIL_HOST_PASSWORD = 'YOUR_PASSWORD'
 ```
 
-You can use the infos for testing:
-```bash
-EMAIL_HOST_USER = 'tecnhartstest@gmail.com'
-DEFAULT_FROM_EMAIL = 'Technarts Airlines <tecnhartstest@gmail.com>'
-EMAIL_HOST_PASSWORD = 'rcvzssqriwuhpmqd'
-```
-
 1. **Setup Python:**
    - Python -> 3.11
 
 2. **Create virtual environment:**
 ```bash
-python -m venv venv
+python -m venv .venv
 ```
 
 3. **Active virtual environment:**
 ```bash
-source .venv/bin/activate
+source .venv/scripts/activate
 ```
 
 4. **Download requirements:**
